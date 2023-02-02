@@ -14,7 +14,7 @@ const MapContainer = (props) => {
     <Map
       google={props.google}
       zoom={14}
-      style={{ width: "50%", height: "50%" }}
+      style={{ width: "100%", height: "50%" }}
       initialCenter={{
         lat: props.mapContainer.lat || 37.7749,
         lng: props.mapContainer.lng || -122.4194,

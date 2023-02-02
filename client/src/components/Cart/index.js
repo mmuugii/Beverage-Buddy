@@ -121,6 +121,8 @@ const Cart = () => {
             )}
           </div>
           <div>
+            <br />
+            <h2>Share your location:</h2>
             <MapContainer mapContainer={position} />
           </div>
         </div>
