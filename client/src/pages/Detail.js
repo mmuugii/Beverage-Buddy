@@ -13,6 +13,7 @@ import {
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
+import './detail.css';
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -85,14 +86,20 @@ function Detail() {
     <>
       {currentProduct && cart ? (
         <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
+          <Link to="/">← Back to Products</Link> <br></br>
+          <br></br>
+          <img
+            src={`/images/${currentProduct.image}`}
+            alt={currentProduct.name}
+            className='productImage'
+          />
 
-          <h2>{currentProduct.name}</h2>
+          <h2 className='productName'>{currentProduct.name}</h2>
 
-          <p>{currentProduct.description}</p>
+          <p className='productName'>{currentProduct.description}</p>
 
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
+          <p className='productName'>
+            <strong>Price: </strong>${currentProduct.price}{' '} <br></br>
             <button onClick={addToCart}>Add to Cart</button>
             <button
               disabled={!cart.find((p) => p._id === currentProduct._id)}
@@ -102,10 +109,7 @@ function Detail() {
             </button>
           </p>
 
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
