@@ -6,10 +6,9 @@ db.once('open', async () => {
 
   const categories = await Category.insertMany([
     { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
-    { name: 'Books' },
-    { name: 'Toys' }
+    { name: 'Non-Alcoholic Beverages' },
+    { name: 'Alcoholic Beverages' },
+    { name: 'Golf Supplies' }
   ]);
 
   console.log('categories seeded');
@@ -18,110 +17,110 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Tin of Cookies',
+      name: 'Chicken Sandwhich Meal',
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
+        'A fried chicken sandwhich patty topped with lettuce, onions, tomatoes between two grilled buns.',
+      image: 'chickensandwhich.jpg',
       category: categories[0]._id,
-      price: 2.99,
-      quantity: 500
+      price: 12.00,
+      quantity: 10
     },
     {
-      name: 'Canned Coffee',
+      name: 'Veggie Burger Meal',
       description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'canned-coffee.jpg',
+        'A grilled veggie patty topped with lettuce, onions, tomatoes between two grilled buns.',
+      image: 'veggieburger.jpg',
       category: categories[0]._id,
-      price: 1.99,
-      quantity: 500
+      price: 10.99,
+      quantity: 12
     },
     {
-      name: 'Toilet Paper',
+      name: 'Virgin Bloody Mary',
       category: categories[1]._id,
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
+        'The original taste of a classic Bloody Mary minus the alcohol!',
+      image: 'bloodymaryN.jpg',
       price: 7.99,
       quantity: 20
     },
     {
-      name: 'Handmade Soap',
+      name: 'No-Mo Mojito',
       category: categories[1]._id,
       description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
-      price: 3.99,
+        'Is it too hot on the course? Allow the No-Mo Mojito to cool you down the fairway today!.',
+      image: 'mojitoN.jpg',
+      price: 7.99,
       quantity: 50
     },
     {
-      name: 'Set of Wooden Spoons',
+      name: 'Ranch Water',
       category: categories[1]._id,
       description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'wooden-spoons.jpg',
-      price: 14.99,
-      quantity: 100
-    },
-    {
-      name: 'Camera',
-      category: categories[2]._id,
-      description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'camera.jpg',
-      price: 399.99,
-      quantity: 30
-    },
-    {
-      name: 'Tablet',
-      category: categories[2]._id,
-      description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
-      image: 'tablet.jpg',
-      price: 199.99,
-      quantity: 30
-    },
-    {
-      name: 'Tales at Bedtime',
-      category: categories[3]._id,
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
-      image: 'bedtime-book.jpg',
-      price: 9.99,
-      quantity: 100
-    },
-    {
-      name: 'Spinning Top',
-      category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'spinning-top.jpg',
-      price: 1.99,
-      quantity: 1000
-    },
-    {
-      name: 'Set of Plastic Horses',
-      category: categories[4]._id,
-      description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
-      image: 'plastic-horses.jpg',
-      price: 2.99,
-      quantity: 1000
-    },
-    {
-      name: 'Teddy Bear',
-      category: categories[4]._id,
-      description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'teddy-bear.jpg',
+        'Soda Water + Lime Juice - Tequila.. equals a cool refreshing day on the fairway!',
+      image: 'ranchwater.jpg',
       price: 7.99,
       quantity: 100
     },
     {
-      name: 'Alphabet Blocks',
-      category: categories[4]._id,
+      name: 'Bev-Buddy-Beer',
+      category: categories[2]._id,
       description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+        'Our signature beer, handcrafted to perfection and cooled just above freezing to keep you agile on the course.',
+      image: 'beer.jpg',
+      price: 7.99,
+      quantity: 30
+    },
+    {
+      name: 'Bloody Mary',
+      category: categories[2]._id,
+      description:
+        'Classic Bloody Mary mix with two shots of vodka, a bacon strip and a celery stick for tasting.',
+      image: 'bloodymaryA.jpg',
+      price: 11.99,
+      quantity: 30
+    },
+    {
+      name: 'Mojito',
+      category: categories[2]._id,
+      description:
+        'Classic mint leaf and rum mix that every island goer loves. Whether you are in a sand bunker or on a sand beach this drink helps relax.',
+      image: 'mojitoA.jpg',
       price: 9.99,
+      quantity: 100
+    },
+    {
+      name: 'Golf Balls (25ct)',
+      category: categories[3]._id,
+      description: 'Forget Something? Dont worry, we got you covered.',
+      image: 'golfballs.jpg',
+      price: 15.00,
+      quantity: 1000
+    },
+    {
+      name: 'Tees (30ct)',
+      category: categories[3]._id,
+      description:
+        'Ready to tee off?',
+      image: 'golftees.jpg',
+      price: 4.99,
+      quantity: 1000
+    },
+    {
+      name: 'Golf Gloves',
+      category: categories[3]._id,
+      description:
+        'Focus on your swing not the blisters. Grab some gloves!',
+      image: 'golfgloves.jpg',
+      price: 9.99,
+      quantity: 100
+    },
+    {
+      name: 'Range Finder',
+      category: categories[3]._id,
+      description:
+        'Save the guessing games for later. Use our range finder to see exactly which club to use on the course.',
+      image: 'rangefinder.jpg',
+      price: 59.99,
       quantity: 600
     }
   ]);
@@ -131,9 +130,9 @@ db.once('open', async () => {
   await User.deleteMany();
 
   await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
-    email: 'pamela@testmail.com',
+    firstName: 'Jeremy',
+    lastName: 'Fullbright',
+    email: 'jeremy@testmail.com',
     password: 'password12345',
     orders: [
       {
@@ -143,9 +142,9 @@ db.once('open', async () => {
   });
 
   await User.create({
-    firstName: 'Elijah',
-    lastName: 'Holt',
-    email: 'eholt@testmail.com',
+    firstName: 'Jacob',
+    lastName: 'Van Dyke',
+    email: 'jacob@testmail.com',
     password: 'password12345'
   });
 
@@ -153,3 +152,4 @@ db.once('open', async () => {
 
   process.exit();
 });
+
