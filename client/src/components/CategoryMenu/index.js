@@ -42,8 +42,9 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
+    <div className='category'>
       <h2>Choose a Category:</h2>
+      <div className='media-scroller'>
       {categories.map((item) => (
         <button
           key={item._id}
@@ -54,6 +55,7 @@ function CategoryMenu() {
           {item.name}
         </button>
       ))}
+        </div>
     </div>
   );
 }

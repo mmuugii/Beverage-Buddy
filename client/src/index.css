@@ -103,7 +103,8 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: #5ba851;;
+  background-color: #5ba851;
+  text-align: center;
 }
 
 button:hover {
@@ -115,8 +116,20 @@ button[disabled] {
   opacity: .8;
 }
 
+.add-btn{
+  font-size: 40px;
+  border-radius: 50%;
+  position: absolute;
+top: 20px;
+right: 20px;
+  
+}
+
+
 img {
   max-width: 100%;
+  max-height: 80%;
+  border-radius: 15px;
 }
 
 span[role="img"] {
@@ -146,6 +159,8 @@ input:focus {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  inline-size: min(100% - 4rem, 70rem);
+  margin-inline: auto;
 }
 .product-container {
   max-width: 1140px;
@@ -155,6 +170,8 @@ input:focus {
   grid-gap: 40px;
   padding-bottom: 5rem;
 }
+
+
 
 .flex-row {
   display: flex;
@@ -224,8 +241,13 @@ input:focus {
 .card {
 
   text-align: center;
-  background-color: #302e35;
+  /* background-color: #302e35; */
   border: 1rem;
+}
+
+.product-card{
+  position: relative;
+  display: inline-block;
 }
 
 .error-text {

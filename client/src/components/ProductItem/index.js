@@ -51,6 +51,7 @@ function ProductItem(item) {
   };
 
   return (
+      <div className="product-card">
     <div className="card px-1 py-1">
       <Link to={`/products/${_id}`}>
         <img alt={name} src={`/images/${image}`} />
@@ -62,9 +63,11 @@ function ProductItem(item) {
         </div>
         <span>${price}</span>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+
+      <button className="add-btn" onClick={addToCart}>+</button>
       <div id="snackbar">Some text some message..</div>
     </div>
+
   );
 }
 
