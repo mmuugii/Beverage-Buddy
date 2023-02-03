@@ -66,9 +66,11 @@ function ProductItem(item) {
 
       <button className="add-btn" onClick={addToCart}>+</button>
       <div id="snackbar">Some text some message..</div>
-    </div>
+      </div>
+      </div>
 
   );
-}
+};
+      
 
 export default ProductItem;
