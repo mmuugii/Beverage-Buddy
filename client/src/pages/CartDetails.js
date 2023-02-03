@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { useLazyQuery } from "@apollo/client";
-import { QUERY_CHECKOUT } from "../../utils/queries";
-import { idbPromise } from "../../utils/helpers";
-import CartItem from "../CartItem";
-import Auth from "../../utils/auth";
-import MapContainer from "../Map";
-import { useStoreContext } from "../../utils/GlobalState";
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
-import "./style.css";
+import { QUERY_CHECKOUT } from "../utils/queries";
+import { idbPromise } from "../utils/helpers";
+import CartItem from "../components/CartItem";
+import Auth from "../utils/auth";
+import MapContainer from "../components/Map";
+import { useStoreContext } from "../utils/GlobalState";
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
+import "../components/Cart/style.css";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -87,21 +88,10 @@ const Cart = () => {
     });
   }
 
-  if (!state.cartOpen) {
-    return (
-      <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
-          🛒
-        </span>
-      </div>
-    );
-  }
-
   return (
-  
-    <div className="cart">
-      <div className="close" onClick={toggleCart}>
-        [close]
+    <div className="cartDetails">
+      <div className="container my-2">
+        <Link to="/">← Back to Menu</Link>
       </div>
       <h2>Shopping Cart</h2>
 
