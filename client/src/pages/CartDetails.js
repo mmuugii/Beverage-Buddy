@@ -9,6 +9,7 @@ import Auth from "../utils/auth";
 import MapContainer from "../components/Map";
 import { useStoreContext } from "../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
+import "../../src/index.css";
 import "../components/Cart/style.css";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
@@ -28,17 +29,18 @@ const Cart = () => {
       });
     }
   }, [data]);
-  const [position, setPosition] = useState({});
+  const [location, setLocation] = useState({});
 
   // Get Geo Position and store as 'position' var
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setPosition({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
+      (location) => {
+        setLocation({
+          lat: location.coords.latitude,
+          lng: location.coords.longitude,
         });
-        // console.log(position);
+        localStorage.setItem("lat", JSON.stringify(location.coords.latitude));
+        localStorage.setItem("lng", JSON.stringify(location.coords.longitude));
       },
       (error) => {
         console.error(error);
@@ -89,32 +91,34 @@ const Cart = () => {
   }
 
   return (
-    <div className="cartDetails">
-      <div className="container my-2">
+    <div className="container">
+      <div className="backMenu">
         <Link to="/">← Back to Menu</Link>
       </div>
-      <h2>Shopping Cart</h2>
+      <div className="checkoutTotal">
+        {/* Check to see if the user is logged in. If so render a button to check out */}
+        {Auth.loggedIn() ? (
+          <button className="buttonCheckout" onClick={submitCheckout}>
+            Checkout
+          </button>
+        ) : (
+          <span>(log in to check out)</span>
+        )}
+        <h5>Total: ${calculateTotal()}</h5>
+      </div>
 
       {state.cart.length ? (
-        <div>
-          {state.cart.map((item) => (
-            <CartItem key={item._id} item={item} />
-          ))}
-
-          <div className="flex-row space-between">
-            <strong>Total: ${calculateTotal()}</strong>
-
-            {/* Check to see if the user is logged in. If so render a button to check out */}
-            {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
-            ) : (
-              <span>(log in to check out)</span>
-            )}
+        <div className="checkout-container">
+          <h2>Your Cart</h2>
+          <div className="product-container">
+            {state.cart.map((item) => (
+              <CartItem key={item._id} item={item} />
+            ))}
           </div>
-          <div>
-            <br />
+
+          <div className="map">
             <h2>Share your location:</h2>
-            <MapContainer mapContainer={position} />
+            <MapContainer mapContainer={location} />
           </div>
         </div>
       ) : (
