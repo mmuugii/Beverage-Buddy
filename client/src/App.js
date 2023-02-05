@@ -46,8 +46,8 @@ function App() {
       <Router>
         <div>
           <StoreProvider>
-            <Nav />
-            <HeroImage />
+            
+            {/* <HeroImage /> */}
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />

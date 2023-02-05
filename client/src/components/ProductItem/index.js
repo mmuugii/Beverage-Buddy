@@ -65,6 +65,7 @@ function ProductItem(item) {
         <button className="add-btn" onClick={addToCart}>
           +
         </button>
+
         {/* Confirmation Toast displayed when adding item to cart */}
         <div id="snackbar">added to cart..</div>
       </div>
