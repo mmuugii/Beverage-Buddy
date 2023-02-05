@@ -14,6 +14,19 @@ function ProductItem(item) {
   const { cart } = state;
 
   const addToCart = () => {
+    function addCartMessage() {
+      console.log("toast function called");
+      // Get the snackbar DIV
+      var x = document.getElementById("snackbar");
+
+      // Add the "show" class to DIV
+      x.className = "show";
+
+      // After 3 seconds, remove the show class from DIV
+      setTimeout(function () {
+        x.className = x.className.replace("show", "");
+      }, 3000);
+    }
     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
     if (itemInCart) {
       dispatch({
@@ -25,23 +38,8 @@ function ProductItem(item) {
         ...itemInCart,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
-
-      function myFunction() {
-        console.log("toast function called");
-        // Get the snackbar DIV
-        var x = document.getElementById("snackbar");
-
-        // Add the "show" class to DIV
-        x.className = "show";
-
-        // After 3 seconds, remove the show class from DIV
-        setTimeout(function () {
-          x.className = x.className.replace("show", "");
-        }, 3000);
-      }
-
-      myFunction();
     } else {
+      addCartMessage();
       dispatch({
         type: ADD_TO_CART,
         product: { ...item, purchaseQuantity: 1 },
@@ -67,7 +65,9 @@ function ProductItem(item) {
         <button className="add-btn" onClick={addToCart}>
           +
         </button>
-        <div id="snackbar">Some text some message..</div>
+
+        {/* Confirmation Toast displayed when adding item to cart */}
+        <div id="snackbar">added to cart..</div>
       </div>
     </div>
   );

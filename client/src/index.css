@@ -86,6 +86,7 @@ header {
   font-family: "Antonio", sans-serif;
   text-decoration: none;
   font-weight: 400;
+
 }
 
 nav {
@@ -120,6 +121,7 @@ button {
   text-align: center;
 }
 
+
 button:hover {
   opacity: 0.8;
 }
@@ -129,12 +131,57 @@ button[disabled] {
   opacity: 0.8;
 }
 
+
+.buttonCheckout {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #f3eff1;
+  padding: 0.25rem 1rem;
+  border-radius: .5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 1px;
+  background-color: #5ba851;
+  text-align: center;
+}
+
+/* Styling for checkout page */
+.buttonCheckout:hover {
+  opacity: .8;
+}
+
+.buttonCheckout[disabled] {
+  cursor: default;
+  opacity: .8;
+}
+
+.checkoutTotal {
+  float: right;
+
+}
+
+.backMenu {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  float: none;
+}
+
+.checkout-container {
+  padding-top: 80px;
+  float: none;
+}
+
+/* end of checkout page styling */
+
+
 .add-btn {
   font-size: 40px;
   border-radius: 50%;
   position: absolute;
   top: 20px;
   right: 20px;
+
 }
 .profile-button {
   display: inline-block;
@@ -154,6 +201,7 @@ button[disabled] {
   text-decoration: none;
   border-radius: 0.5rem;
   font-weight: 400;
+
 }
 
 @media screen and (max-width: 740px) {
@@ -164,7 +212,8 @@ button[disabled] {
 
 img {
   max-width: 100%;
-  max-height: 80%;
+  /* commented this out as the 80% causes brown bands in the Map */
+  /* max-height: 80%; */
   border-radius: 15px;
 }
 
@@ -192,7 +241,10 @@ input {
 
 input:focus {
   border: 1px solid #5ba851;
-  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+
+  ;
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
+
 }
 
 .container {
@@ -203,6 +255,7 @@ input:focus {
   inline-size: min(100% - 4rem, 70rem);
   margin-inline: auto;
 }
+
 .product-container {
   max-width: 1140px;
   margin: auto;
@@ -214,10 +267,12 @@ input:focus {
   z-index: 0;
 }
 
+
 .flex-row {
   display: flex;
   flex-wrap: wrap;
 }
+
 @media screen and (max-width: 740px) {
   .product-container {
     max-width: 90%;
@@ -298,4 +353,14 @@ input:focus {
   .card {
     width: 100%;
   }
+
+  /* Checkout page styling on mobile */
+  .map {
+    padding-top: 15px;
+  }
+
+  .checkout-container {
+    display: inline-block;
+  }
+
 }
