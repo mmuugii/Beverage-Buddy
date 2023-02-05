@@ -1,19 +1,20 @@
 // import React from "react";
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
-import Cart from "../components/Cart";
 
 import React, { useState, useEffect } from "react";
-// import HeroImage from "../components/Hero";
+import HeroImage from "../components/Hero";
+import Nav from "../components/Nav";
 
 const Home = () => {
   return (
-    <div className="container">
-
-      {/* <HeroImage /> */}
-
-      <CategoryMenu />
-      <ProductList />
+    <div>
+      <Nav/>
+      <HeroImage />
+      <div className="container">
+        <CategoryMenu />
+        <ProductList />
+      </div>
     </div>
   );
 };

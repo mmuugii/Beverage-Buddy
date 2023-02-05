@@ -26,10 +26,10 @@ function Nav() {
       return (
         <ul className="flex-row">
           <li className="mx-1">
-            <Link to="/signup">Signup</Link>
+            <Link to="/signup" className="profile-button">Signup</Link>
           </li>
-          <li className="mx-1">
-            <Link to="/login">Login</Link>
+          <li className="mx-1" >
+            <Link to="/login" className="profile-button">Login</Link>
           </li>
         </ul>
       );
@@ -42,7 +42,8 @@ function Nav() {
         <Link to="/">
           {/* <span role="img" aria-label="shopping bag">🛍️</span> */
           /*need to add a logo here*/}
-          Beverage Buddy
+          {/* <img className="logo" src="/images/logo.jpg" alt="Logo" /> */}
+          <div className="name">Clubhouse Caddie</div>
         </Link>
       </h1>
 
