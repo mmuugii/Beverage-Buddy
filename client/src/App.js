@@ -19,6 +19,7 @@ import Success from "./pages/Success";
 import OrderHistory from "./pages/OrderHistory";
 import CartDetails from "./pages/CartDetails";
 import HeroImage from './components/Hero';
+import AboutMe from "./pages/About";
 
 
 const httpLink = createHttpLink({
@@ -57,6 +58,7 @@ function App() {
               <Route path="/products/:id" element={<Detail />} />
               <Route path="/cart" element={<CartDetails />} />
               <Route path="*" element={<NoMatch />} />
+              <Route path="/about" element={<AboutMe />} />
             </Routes>
           </StoreProvider>
         </div>
