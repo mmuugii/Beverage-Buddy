@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { useLazyQuery } from "@apollo/client";
-import { QUERY_CHECKOUT } from "../../utils/queries";
-import { idbPromise } from "../../utils/helpers";
-import CartItem from "../CartItem";
-import Auth from "../../utils/auth";
-import MapContainer from "../Map";
-import { useStoreContext } from "../../utils/GlobalState";
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
-import "./style.css";
+import { QUERY_CHECKOUT } from "../utils/queries";
+import { idbPromise } from "../utils/helpers";
+import CartItem from "../components/CartItem";
+import Auth from "../utils/auth";
+import MapContainer from "../components/Map";
+import { useStoreContext } from "../utils/GlobalState";
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
+import "../../src/index.css";
+import "../components/Cart/style.css";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -27,17 +29,18 @@ const Cart = () => {
       });
     }
   }, [data]);
-  const [position, setPosition] = useState({});
+  const [location, setLocation] = useState({});
 
   // Get Geo Position and store as 'position' var
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setPosition({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
+      (location) => {
+        setLocation({
+          lat: location.coords.latitude,
+          lng: location.coords.longitude,
         });
-        // console.log(position);
+        localStorage.setItem("lat", JSON.stringify(location.coords.latitude));
+        localStorage.setItem("lng", JSON.stringify(location.coords.longitude));
       },
       (error) => {
         console.error(error);
@@ -87,44 +90,35 @@ const Cart = () => {
     });
   }
 
-  if (!state.cartOpen) {
-    return (
-      <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
-          🛒
-        </span>
-      </div>
-    );
-  }
-
   return (
-  
-    <div className="cart">
-      <div className="close" onClick={toggleCart}>
-        [close]
+    <div className="container">
+      <div className="backMenu">
+        <Link to="/">← Back to Menu</Link>
       </div>
-      <h2>Shopping Cart</h2>
+      <div className="checkoutTotal">
+        {/* Check to see if the user is logged in. If so render a button to check out */}
+        {Auth.loggedIn() ? (
+          <button className="buttonCheckout" onClick={submitCheckout}>
+            Checkout
+          </button>
+        ) : (
+          <span>(log in to check out)</span>
+        )}
+        <h5>Total: ${calculateTotal()}</h5>
+      </div>
 
       {state.cart.length ? (
-        <div>
-          {state.cart.map((item) => (
-            <CartItem key={item._id} item={item} />
-          ))}
-
-          <div className="flex-row space-between">
-            <strong>Total: ${calculateTotal()}</strong>
-
-            {/* Check to see if the user is logged in. If so render a button to check out */}
-            {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
-            ) : (
-              <span>(log in to check out)</span>
-            )}
+        <div className="checkout-container">
+          <h2>Your Cart</h2>
+          <div className="product-container">
+            {state.cart.map((item) => (
+              <CartItem key={item._id} item={item} />
+            ))}
           </div>
-          <div>
-            <br />
+
+          <div className="map">
             <h2>Share your location:</h2>
-            <MapContainer mapContainer={position} />
+            <MapContainer mapContainer={location} />
           </div>
         </div>
       ) : (
