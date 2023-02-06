@@ -86,7 +86,6 @@ header {
   font-family: "Antonio", sans-serif;
   text-decoration: none;
   font-weight: 400;
-
 }
 
 nav {
@@ -121,7 +120,6 @@ button {
   text-align: center;
 }
 
-
 button:hover {
   opacity: 0.8;
 }
@@ -131,13 +129,12 @@ button[disabled] {
   opacity: 0.8;
 }
 
-
 .buttonCheckout {
   font-size: 2rem;
   text-decoration: none;
   color: #f3eff1;
   padding: 0.25rem 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: none;
   outline: none;
   cursor: pointer;
@@ -148,17 +145,16 @@ button[disabled] {
 
 /* Styling for checkout page */
 .buttonCheckout:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .buttonCheckout[disabled] {
   cursor: default;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .checkoutTotal {
   float: right;
-
 }
 
 .backMenu {
@@ -174,14 +170,12 @@ button[disabled] {
 
 /* end of checkout page styling */
 
-
 .add-btn {
   font-size: 40px;
   border-radius: 50%;
   position: absolute;
   top: 20px;
   right: 20px;
-
 }
 .profile-button {
   display: inline-block;
@@ -201,7 +195,6 @@ button[disabled] {
   text-decoration: none;
   border-radius: 0.5rem;
   font-weight: 400;
-
 }
 
 @media screen and (max-width: 740px) {
@@ -217,6 +210,16 @@ img {
   border-radius: 15px;
 }
 
+.product-img {
+  height: 300px;
+  width: 500px;
+  object-fit: cover;
+}
+
+.hero-text {
+  font-family: "Antonio", sans-serif;
+}
+
 .logo {
   height: 100px;
   width: 100px;
@@ -226,8 +229,47 @@ span[role="img"] {
   cursor: default;
 }
 
+.signup-box{
+  width:360px;
+  height: auto;
+  margin: auto;
+  background-color: rgba(27, 24, 36, 0.85);
+  border-radius: 3px;
+  padding-bottom: 20px;
+}
+
 form {
-  width: 40%;
+  width: 300px;
+}
+
+form input{
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+}
+
+
+.form-img {
+  background-image: url("./assets/golf.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+form label {
+  display:flex;
+  margin-top: 18px;
+  font-size: 18px;
 }
 
 input {
@@ -236,15 +278,21 @@ input {
   border: 1px solid white;
   outline: none;
   border-radius: 3px;
-  transition: box-shadow 0.2s;
+  justify-content: center;
+}
+
+.form-btn{
+  width: 300px;
+  height:35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #5ba851;
 }
 
 input:focus {
   border: 1px solid #5ba851;
 
-  ;
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
-
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -266,7 +314,6 @@ input:focus {
   position: relative;
   z-index: 0;
 }
-
 
 .flex-row {
   display: flex;
@@ -362,5 +409,4 @@ input:focus {
   .checkout-container {
     display: inline-block;
   }
-
 }
