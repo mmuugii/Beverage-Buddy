@@ -237,7 +237,7 @@ button[disabled] {
   color: #f3eff1;
   text-decoration: none;
   border-radius: 0.5rem;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 740px) {
