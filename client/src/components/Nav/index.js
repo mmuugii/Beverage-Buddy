@@ -1,46 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Nav() {
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/about">About</Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/cart">Cart</Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/orderHistory">Order History</Link>
-          </li>
-          <li className="mx-1">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a>
-          </li>
-        </ul>
+        <div>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="mx-1">
+              <Link to="/about">About</Link>
+            </li>
+            <li className="mx-1">
+              <Link to="/cart">Cart</Link>
+            </li>
+            <li className="mx-1">
+              <Link to="/orderHistory">Order History</Link>
+            </li>
+            <li className="mx-1">
+              {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+              <a href="/" onClick={() => Auth.logout()}>
+                Logout
+              </a>
+            </li>
+          </ul>
+          <div className="hamburger" onClick={handleClick}>
+            {click ? (
+              <FaTimes size={20} style={{ color: "#fff" }} />
+            ) : (
+              <FaBars size={20} style={{ color: "#fff" }} />
+            )}
+          </div>
+        </div>
       );
     } else {
       return (
-        <ul className="flex-row">
+        <div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="mx-1">
-            <Link to="/signup" className="profile-button">Signup</Link>
-          </li>
-          <li className="mx-1" >
-            <Link to="/login" className="profile-button">Login</Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/cart" className="profile-button">Cart</Link>
+            <Link to="/signup" className="profile-button">
+              Signup
+            </Link>
           </li>
           <li className="mx-1">
-            <Link to="/about" className="profile-button">About</Link>
+            <Link to="/login" className="profile-button">
+              Login
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link to="/cart" className="profile-button">
+              Cart
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link to="/about" className="profile-button">
+              About
+            </Link>
           </li>
         </ul>
+        <div className="hamburger" onClick={handleClick}>
+        {click ? (
+          <FaTimes size={20} style={{ color: "#fff" }} />
+        ) : (
+          <FaBars size={20} style={{ color: "#fff" }} />
+        )}
+          </div>
+          </div>
       );
     }
   }

@@ -23,5 +23,8 @@
   "homepage": "https://github.com/mmuugii/Beverage-Buddy#readme",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "react-icons": "^4.7.1"
   }
 }
