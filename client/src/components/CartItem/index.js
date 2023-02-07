@@ -36,7 +36,7 @@ const CartItem = ({ item }) => {
     <div className="product-card">
       <div className="card px-1 py-1">
       <div>
-        <img src={`/images/${item.image}`} alt="" />
+        <img className="product-img" src={`/images/${item.image}`} alt="" />
       </div>
       <div>
         <h3>

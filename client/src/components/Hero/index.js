@@ -20,9 +20,6 @@ function HeroImage() {
         <h1>
             Welcome to Clubhouse Caddie
         </h1>
-        <p>
-            by Muugii, Jeremy, Jackson & Jacob
-        </p>
       </div>
     </div>
   );
