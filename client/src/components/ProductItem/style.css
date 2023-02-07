@@ -2,9 +2,9 @@
 #snackbar {
     visibility: hidden;
     /* Hidden by default. Visible on click */
-    min-width: 250px;
+    min-width: 150px;
     /* Set a default minimum width */
-    margin-left: -125px;
+    margin-left: -50px;
     /* Divide value of min-width by 2 */
     background-color: #333;
     /* Black background color */
@@ -14,7 +14,7 @@
     /* Centered text */
     border-radius: 2px;
     /* Rounded borders */
-    padding: 16px;
+    padding: 10px;
     /* Padding */
     position: fixed;
     /* Sit on top of the screen */
@@ -22,7 +22,7 @@
     /* Add a z-index if needed */
     left: 90%;
     /* Center the snackbar */
-    top: 40px;
+    top: 70px;
     /* 30px from the bottom */
 }
 
@@ -44,7 +44,7 @@
     }
 
     to {
-        top: 40px;
+        top: 70px;
         opacity: 1;
     }
 }
@@ -56,14 +56,14 @@
     }
 
     to {
-        top: 40px;
+        top: 70px;
         opacity: 1;
     }
 }
 
 @-webkit-keyframes fadeout {
     from {
-        top: 40px;
+        top: 70px;
         opacity: 1;
     }
 
@@ -75,12 +75,18 @@
 
 @keyframes fadeout {
     from {
-        top: 40px;
+        top: 70px;
         opacity: 1;
     }
 
     to {
         top: 0;
         opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    #snackbar {
+        margin-left: -120px;
     }
 }

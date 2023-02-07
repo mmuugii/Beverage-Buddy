@@ -4,7 +4,7 @@ import Nav from "../components/Nav";
 import "./about.css";
 import muugiiImage from './assets/IMG_3980.jpg';
 import jeremyImage from './assets/jeremyf.png';
-import jacksonImage from './assets/IMG_2505.jpg';
+import jacksonImage from './assets/jacksona.jpg';
 
 
 const AboutMe = () => {
