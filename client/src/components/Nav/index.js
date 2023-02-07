@@ -14,17 +14,17 @@ function Nav() {
         <div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="mx-1">
-              <Link to="/about">About</Link>
+              <Link to="/cart" className="profile-button">Cart</Link>
             </li>
             <li className="mx-1">
-              <Link to="/cart">Cart</Link>
+              <Link to="/orderHistory" className="profile-button">Order History</Link>
             </li>
             <li className="mx-1">
-              <Link to="/orderHistory">Order History</Link>
+              <Link to="/about" className="profile-button">About</Link>
             </li>
             <li className="mx-1">
               {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-              <a href="/" onClick={() => Auth.logout()}>
+              <a href="/" onClick={() => Auth.logout()} className="profile-button">
                 Logout
               </a>
             </li>
