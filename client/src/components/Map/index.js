@@ -7,7 +7,7 @@ const MapContainer = (props) => {
     <Map
       google={props.google}
       zoom={14}
-      style={{ width: "50%", height: "50%" }}
+      style={{ width: "85%", height: "50%",  }}
       initialCenter={{
         lat: JSON.parse(localStorage.getItem("lat")) || 37.7749,
         lng: JSON.parse(localStorage.getItem("lng")) || -122.4194,
