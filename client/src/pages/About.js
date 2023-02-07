@@ -5,12 +5,13 @@ import "./about.css";
 import muugiiImage from './assets/IMG_3980.jpg';
 import jeremyImage from './assets/jeremyf.png';
 import jacksonImage from './assets/jacksona.jpg';
+import jacobImage from './assets/jake.png';
 
 
 const AboutMe = () => {
   return (
     <>
-      <Nav /> <br></br> <br></br> <br></br>
+      <Nav /> 
       <div className="about-me">
         <h2>Meet the Team</h2>
         <div className="team-members">
@@ -30,7 +31,7 @@ const AboutMe = () => {
             <p className="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div className="team-member">
-            <img src="./../assets/IMG_3980.jpg" alt="Jacob image" />
+            <img src={jacobImage} alt="Jacob image" />
             <p className="bio">Jacob V.D.</p>
             <p className="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>

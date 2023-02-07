@@ -237,12 +237,19 @@ button[disabled] {
   color: #f3eff1;
   text-decoration: none;
   border-radius: 0.5rem;
+
   font-weight: 700;
+
 }
 
 @media screen and (max-width: 740px) {
   .category-btn {
     padding-top: 0.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .container {
+    margin-top: 90px;
   }
 }
 
@@ -351,6 +358,7 @@ input:focus {
   margin-right: auto;
   inline-size: min(100% - 4rem, 70rem);
   margin-inline: auto;
+  margin-top: 50px;
 }
 
 .product-container {
@@ -445,6 +453,19 @@ input:focus {
   color: rgb(228, 46, 1);
 }
 
+.map {
+  padding-top: 15px;
+  text-align: center;
+  width: 90%;
+  height: 90%;
+}
+
+.mapBox {
+  padding-top: 15px;
+  width: 88%;
+  height: 75%;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
@@ -453,6 +474,7 @@ input:focus {
   /* Checkout page styling on mobile */
   .map {
     padding-top: 15px;
+    text-align: center;
   }
 
   .checkout-container {

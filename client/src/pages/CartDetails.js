@@ -11,6 +11,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import "../../src/index.css";
 import "../components/Cart/style.css";
+import Nav from "../components/Nav";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -91,45 +92,48 @@ const Cart = () => {
   }
 
   return (
-    <div className="container">
-      <div className="backMenu">
-        <Link to="/">← Back to Menu</Link>
-      </div>
-      <div className="checkoutTotal">
-        {/* Check to see if the user is logged in. If so render a button to check out */}
-        {Auth.loggedIn() ? (
-          <button className="buttonCheckout" onClick={submitCheckout}>
-            Checkout
-          </button>
-        ) : (
-          <span>(log in to check out)</span>
-        )}
-        <h5>Total: ${calculateTotal()}</h5>
-      </div>
-
-      {state.cart.length ? (
-        <div className="checkout-container">
-          <h2>Your Cart</h2>
-          <div className="product-container">
-            {state.cart.map((item) => (
-              <CartItem key={item._id} item={item} />
-            ))}
-          </div>
-
-          <div className="map">
-            <h2>Share your location:</h2>
-            <MapContainer mapContainer={location} />
-          </div>
+    <>
+      <Nav />
+      <div className="container">
+        <div className="backMenu">
+          <Link to="/">← Back to Menu</Link>
         </div>
-      ) : (
-        <h3>
-          <span role="img" aria-label="shocked">
-            😱
-          </span>
-          You haven't added anything to your cart yet!
-        </h3>
-      )}
-    </div>
+        <div className="checkoutTotal">
+          {/* Check to see if the user is logged in. If so render a button to check out */}
+          {Auth.loggedIn() ? (
+            <button className="buttonCheckout" onClick={submitCheckout}>
+              Checkout
+            </button>
+          ) : (
+            <span>(log in to check out)</span>
+          )}
+          <h5>Total: ${calculateTotal()}</h5>
+        </div>
+
+        {state.cart.length ? (
+          <div className="checkout-container">
+            <h2>Your Cart</h2>
+            <div className="product-container">
+              {state.cart.map((item) => (
+                <CartItem key={item._id} item={item} />
+              ))}
+            </div>
+
+            <div className="map">
+              <h2>Share your location</h2>
+                <MapContainer mapContainer={location} />
+            </div>
+          </div>
+        ) : (
+          <h3>
+            <span role="img" aria-label="shocked">
+              😱
+            </span>
+            You haven't added anything to your cart yet!
+          </h3>
+        )}
+      </div>
+    </>
   );
 };
 
