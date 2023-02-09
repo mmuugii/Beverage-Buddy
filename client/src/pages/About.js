@@ -50,13 +50,10 @@ const AboutMe = () => {
             <img src={jacobImage} alt="Jacob image" />
             <p className="bio">Jacob V.D.</p>
             <p className="bio">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Hello, I am Junior Developer for the Office of Information Technology for the Governers'.
+              I have a passion for writing code and learning new things everyday. I enjoy being active 
+              in the gym as well as helping others learn code! I am also graduating this fall from the
+              Metropolitan State University Denver in Data Analytics!
             </p>
           </div>
         </div>
