@@ -121,9 +121,9 @@ const Cart = () => {
               <span>(log in to check out)</span>
             )}
           </div>
-          <div>
+          <div className="map">
             <br />
-            <h2>Share your location:</h2>
+            <h2>Share your location</h2>
             <MapContainer mapContainer={position} />
           </div>
         </div>

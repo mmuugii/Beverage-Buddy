@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Project 3",
   "main": "server/server.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "node server/server.js",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
@@ -23,5 +26,8 @@
   "homepage": "https://github.com/mmuugii/Beverage-Buddy#readme",
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "react-icons": "^4.7.1"
   }
 }
