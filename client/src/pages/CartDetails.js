@@ -13,7 +13,7 @@ import "../../src/index.css";
 import "../components/Cart/style.css";
 import Nav from "../components/Nav";
 require("dotenv").config();
-const stripePromiseKey = process.env.REACT_APP_STRIPE_PROMISE_KEY;
+const stripePromiseKey = process.env.REACT_APP_STRIPE_Publishable_KEY;
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 console.log(stripePromiseKey);
