@@ -12,9 +12,12 @@ import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import "../../src/index.css";
 import "../components/Cart/style.css";
 import Nav from "../components/Nav";
+require("dotenv").config();
+const stripePromiseKey = process.env.REACT_APP_STRIPE_PROMISE_KEY;
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+console.log(stripePromiseKey);
+const stripePromise = loadStripe(stripePromiseKey);
 var positionVar = "";
 
 const Cart = () => {
@@ -121,7 +124,7 @@ const Cart = () => {
 
             <div className="map">
               <h2>Share your location</h2>
-                <MapContainer mapContainer={location} />
+              <MapContainer mapContainer={location} />
             </div>
           </div>
         ) : (
