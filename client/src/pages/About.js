@@ -40,13 +40,10 @@ const AboutMe = () => {
             <img src={jacksonImage} alt="Jackson image" />
             <p className="bio">Jackson A.</p>
             <p className="bio">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Hi there, I am a full-stack developer based out of Colorado Springs
+              who has a passion for solving problems and creating designs that
+              are striking and user friendly. I am an avid snowboarder and hiker
+              and hope to be able to combine my two passions together one day. 
             </p>
           </div>
           <div className="team-member">
