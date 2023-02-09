@@ -11,7 +11,9 @@ import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import "./style.css";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe(
+  "pk_test_51MZTJ9KGJeyYgVrEVrVdFQGAqqig03YgVm3keHsM3FouC1Ybvtip7vhU7uvefPRZUngDQhG5aFOJSpXmiW9ENXGC00OhYqJtw3"
+);
 var positionVar = "";
 
 const Cart = () => {
@@ -98,7 +100,6 @@ const Cart = () => {
   }
 
   return (
-  
     <div className="cart">
       <div className="close" onClick={toggleCart}>
         [close]

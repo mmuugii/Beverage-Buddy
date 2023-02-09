@@ -14,7 +14,9 @@ import "../components/Cart/style.css";
 import Nav from "../components/Nav";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe(
+  "pk_test_51MZTJ9KGJeyYgVrEVrVdFQGAqqig03YgVm3keHsM3FouC1Ybvtip7vhU7uvefPRZUngDQhG5aFOJSpXmiW9ENXGC00OhYqJtw3"
+);
 var positionVar = "";
 
 const Cart = () => {
@@ -121,7 +123,7 @@ const Cart = () => {
 
             <div className="map">
               <h2>Share your location</h2>
-                <MapContainer mapContainer={location} />
+              <MapContainer mapContainer={location} />
             </div>
           </div>
         ) : (
