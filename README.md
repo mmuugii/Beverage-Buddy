@@ -30,7 +30,7 @@ N/A
 
 ## Contributing
 
-If you would like to contribute to this project, please make sure to follow the instructions to clone the repository and make comments as required.
+If you would like to contribute to this project, please make sure to follow the instructions to clone the repository and make comments as required. Thank you!
 
 ## Tests
 
