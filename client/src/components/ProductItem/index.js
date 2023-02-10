@@ -15,7 +15,6 @@ function ProductItem(item) {
 
   const addToCart = () => {
     function addCartMessage() {
-      console.log("toast function called");
       // Get the snackbar DIV
       var x = document.getElementById("snackbar");
 

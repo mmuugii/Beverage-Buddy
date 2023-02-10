@@ -16,7 +16,6 @@ require("dotenv").config();
 const stripePromiseKey = process.env.REACT_APP_STRIPE_Publishable_KEY;
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
-console.log(stripePromiseKey);
 const stripePromise = loadStripe(stripePromiseKey);
 var positionVar = "";
 
