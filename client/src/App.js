@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -18,9 +18,8 @@ import { StoreProvider } from "./utils/GlobalState";
 import Success from "./pages/Success";
 import OrderHistory from "./pages/OrderHistory";
 import CartDetails from "./pages/CartDetails";
-import HeroImage from './components/Hero';
+import HeroImage from "./components/Hero";
 import AboutMe from "./pages/About";
-
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -47,7 +46,6 @@ function App() {
       <Router>
         <div>
           <StoreProvider>
-            
             {/* <HeroImage /> */}
             <Routes>
               <Route path="/" element={<Home />} />
